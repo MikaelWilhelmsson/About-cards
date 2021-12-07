@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#about-section {
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./media/img/pexels-background-1813272.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+#about-cards-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+
+.about-card {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    margin: 20px ;
+    background-color: rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 8px #f2f2f2;
+    border-radius: 10px;
+    padding: 10px;
+    color: #f2f2f2;
+}
+
+#about-modal-wrapper {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-modal-content {
+    width: 40%;
+    height: 40%;
+    background: gray;
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.about-modal-header {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.about-modal-body {
+    padding: 20px;
+}
+
+.about-modal-body h2 {
+    text-align: center;
+}
+
+.about-btn {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    height: 50px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 100px;
+    cursor: pointer;
+
+
+}
+
+.about-btn:hover {
+    transition: 0.5s;
+    background-color:black;
+    animation: pulse 1.5s ease-in infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    
+   50% { transform: scale(0.9); }
+  
+  100% { transform: scale(1); }  
+}
+
+
+@media (min-width: 1100px) {
+
+    #about-cards-wrapper {
+        margin-left: -4000px;
+        animation-name: left-slide-in;
+        animation-duration: 3s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+       }
+    
+    @keyframes left-slide-in {
+        from {
+            margin-left: -4000px
+        }
+        to {
+            margin-left: 0;
+        }
+    }
+    
+}
+
+
