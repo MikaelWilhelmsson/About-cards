@@ -1,4 +1,4 @@
-const modalWrapper = document.querySelector("#about-modal-wrapper"); //sätter variabler i det globala scopet för att göra dem åtkomliga för alla.
+const modalWrapper = document.querySelector("#about-modal-wrapper"); //sätter variabler i det globala scopet - de blir åtkomliga för alla
 const cardWrapper = document.querySelector("#about-cards-wrapper");
 
 const cards = [ //arrayen cards som håller properties av olika dattyper: name, content, occupation, experience
@@ -34,18 +34,18 @@ const cards = [ //arrayen cards som håller properties av olika dattyper: name, 
 ];
 
 
-const cardElements = cards
-    .map( //.map() skapar upp en ny array för varje kort (index) i arrayen cards.
+const cardElements = cards //Sätter variablen cardElements till cards.map()
+    .map( //.map() skapar upp en ny array för varje kort (index) i arrayen cards
         (card, index) => `
         <div class="about-card">
             <button class="about-btn" onclick="openModal(${index})">Read more about ${card.name}</button>
         </div>
         `)
-        //Sätter en button för varje kort med ett onclick-event igenon openModal funktionen - beroende på index.
+        //Sätter en button för varje kort med ett onclick-event genom openModal funktionen - beroende på index.
     .join(""); //För att ta bort komma-tecket som separerar arrayerna.
 
 
-cardWrapper.innerHTML = cardElements;
+cardWrapper.innerHTML = cardElements; //Sätter about-cards-wrapper id:t till cardElements
 
 
 const openModal = (index) => { // funktion för att öppna modalen - beroende på index (parameter) så retunerars olika värden på de olika korten - namn, occupation, content, experience.
@@ -65,7 +65,8 @@ const openModal = (index) => { // funktion för att öppna modalen - beroende p�
         <p><strong>Experience level: </strong>${experience ? experience : ""}</p>
     </div>
     `;
-    //två ternary-operatorer istället för if-satser som kollar om occupation samt experience är truthy, om inte retunerar dem en tom sträng. Mindre kod.
+    //Beroende på värdet av ${name, contect, occupation, experience} så ändras h2 och p elementen dynamiskt på varje kort.
+    //två ternary-operatorer istället för if-satser (mindre kod), som kollar om occupation samt experience är truthy, om inte retunerar dem en tom sträng.
     modalWrapper.style.display = "flex";
 };
 

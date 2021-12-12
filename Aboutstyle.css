@@ -76,7 +76,7 @@ body {
     padding: 20px;
 }
 
-.about-modal-body h2 {
+.about-modal-body h2, p {
     text-align: center;
 }
 
